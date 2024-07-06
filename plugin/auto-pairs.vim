@@ -374,6 +374,10 @@ endfunction
 
 function! AutoPairsSpace()
   let line = getline('.')
+  let list_char = line[col('.')-4]
+  if list_char == "-"
+    return "\<SPACE>"
+  endif
   let prev_char = line[col('.')-2]
   let cmd = ''
   let cur_char =line[col('.')-1]
